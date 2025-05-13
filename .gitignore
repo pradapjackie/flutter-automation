@@ -1,0 +1,67 @@
+# Common
+.DS_Store
+*.log
+*.swp
+*.swo
+*.bak
+*~
+.idea/
+.vscode/
+*.iml
+
+# Flutter/Dart - flutter_automation_project
+flutter_automation_project/.dart_tool/
+flutter_automation_project/.packages
+flutter_automation_project/.flutter-plugins
+flutter_automation_project/.flutter-plugins-dependencies
+flutter_automation_project/.metadata
+flutter_automation_project/.pub-cache/
+flutter_automation_project/build/
+flutter_automation_project/pubspec.lock
+flutter_automation_project/web/.dart_tool/
+flutter_automation_project/web/build/
+
+# Android
+flutter_automation_project/android/.gradle/
+flutter_automation_project/android/local.properties
+flutter_automation_project/android/build/
+flutter_automation_project/android/.idea/
+
+# iOS
+flutter_automation_project/ios/Flutter/Flutter.podspec
+flutter_automation_project/ios/Flutter/Generated.xcconfig
+flutter_automation_project/ios/Flutter/ephemeral/
+flutter_automation_project/ios/.symlinks/
+flutter_automation_project/ios/Pods/
+flutter_automation_project/ios/Podfile.lock
+flutter_automation_project/ios/build/
+flutter_automation_project/ios/Runner.xcworkspace/
+flutter_automation_project/ios/xcuserdata/
+
+# Integration & test outputs
+flutter_automation_project/integration_test/generated/
+flutter_automation_project/integration_test/build/
+flutter_automation_project/test_driver/build/
+
+# Flutter native assets
+flutter_automation_project/native_assets/
+
+# Java - flutter-appium-java
+flutter-appium-java/.idea/
+flutter-appium-java/target/
+flutter-appium-java/build/
+flutter-appium-java/out/
+flutter-appium-java/.classpath
+flutter-appium-java/.project
+flutter-appium-java/.settings/
+
+# Maven/Gradle
+**/build/
+**/.gradle/
+**/target/
+**/out/
+.gradle/
+build/
+
+# Local env or secrets (optional)
+.env
