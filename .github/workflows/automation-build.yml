@@ -17,7 +17,13 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.22.1'  # ✅ Dart 3.5.0 included
+          flutter-version: '3.19.6'  # ✅ Dart 3.4.1 (matches your config)
+
+      - name: Clean stale build/cache
+        working-directory: flutter_automation_project
+        run: |
+          rm -f pubspec.lock
+          flutter clean
 
       - name: Install dependencies
         working-directory: flutter_automation_project
