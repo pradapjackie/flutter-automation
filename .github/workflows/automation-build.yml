@@ -1,0 +1,40 @@
+name: Flutter Android Builds
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-apks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.19.6' # Change if needed
+
+      - name: Install dependencies
+        working-directory: flutter-automation/flutter_automation_project
+        run: flutter pub get
+
+      - name: Build Debug Automation APK
+        working-directory: flutter-automation/flutter_automation_project
+        run: flutter build apk --debug -t lib/main_automation.dart
+
+      - name: Build General Release APK
+        working-directory: flutter-automation/flutter_automation_project
+        run: flutter build apk --release -t lib/main.dart
+
+      - name: Upload APKs
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-apks
+          path: |
+            flutter-automation/flutter_automation_project/build/app/outputs/flutter-apk/app-debug.apk
+            flutter-automation/flutter_automation_project/build/app/outputs/flutter-apk/app-release.apk
